@@ -1,0 +1,8 @@
+@function shadow($key) {
+  @if map-has-key($box-shadow, $key) {
+    @return map-get($box-shadow, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $box-shadow.";
+  @return null;
+}

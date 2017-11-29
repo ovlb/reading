@@ -1,0 +1,18 @@
+@function space($key, $map: null) {
+
+  @if $map == viewport {
+    $map: $space-absolute;
+  } @else if $map == relative {
+    $map: $space-relative
+  } @else {
+    @warn "Defaulting to relative (em) spacing.";
+    $map: $space-relative;
+  }
+
+  @if map-has-key($map, $key) {
+    @return map-get($map, $key);
+  }
+
+  @warn "Unknown key `#{$key}` in the map. Available values: `#{$map}`.";
+  @return null;
+}

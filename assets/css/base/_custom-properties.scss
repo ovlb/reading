@@ -1,0 +1,10 @@
+:root {
+  --skew-1: -1deg;
+  --skew-2: -2.5deg;
+  --skew-3: -4deg;
+
+  @media (min-width: breakpoint(xlarge)) {
+    --skew-2: -1.5deg;
+    --skew-3: -2deg;
+  }
+}

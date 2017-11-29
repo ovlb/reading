@@ -1,0 +1,27 @@
+.page-enter-active, .page-leave-active {
+  .masthead__headline {
+    // transition: opacity 2s ease-out, transform 2s ease-out;
+  }
+}
+
+.page-enter, .page-leave-to, .page-leave-active {
+  .masthead__headline {
+    opacity: 0;
+    // transition: opacity 2s ease-out, transform 2s ease-out;
+    transform: translateY(-33%);
+  }
+
+  .masthead__intro {
+    opacity: 0;
+  }
+
+  .main-intro {
+    opacity: 0;
+    transform: translateY(-25%);
+  }
+
+  main {
+    opacity: 0;
+    transition: opacity 2s ease-out .1s;
+  }
+}

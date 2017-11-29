@@ -1,0 +1,16 @@
+@mixin skew($level) {
+  $degree: 0;
+
+  @if $level == 1 {
+    $degree: -1deg;
+  } @else if $level == 2 {
+    $degree: -1.5deg;
+  } @else if $level == 3 {
+    $degree: -2deg;
+  } @else {
+    @error "Invalid level `#{$level}`, try 1 to 3";
+  }
+
+  transform: skewY($degree);
+  transform: skewY(var(--skew-#{$level}));
+}

@@ -1,0 +1,20 @@
+body {
+  background-color: color(light);
+  color: color(dark);
+  display: flex;
+  flex-flow: column;
+  padding-bottom: space(triple, viewport);
+  min-height: 100vh;
+  width: 100%;
+
+  @media (min-width: breakpoint(large)) {
+    &::before {
+      border-top: 3px solid color(main);
+      content: "";
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      z-index: 100;
+    }
+  }
+}
