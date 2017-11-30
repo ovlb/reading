@@ -28,7 +28,7 @@ export default {
     align-self: flex-start;
     max-width: 15rem;
     position: sticky;
-    top: 6em;
+    top: calc(2rem + 8vmin)
   }
 }
 
