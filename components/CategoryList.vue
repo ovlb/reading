@@ -1,16 +1,36 @@
 <template lang="pug">
 section.category-list
-  h3.category-list__headline Kategorien
-  ul.category-list__ul
+  h3.category-list__headline(@click="toggleCategoryList") Kategorien
+    button.category-list__toggle(:aria-label="toggleCategoryListButtonLabel") {{ toggleCategoryListButtonText }}
+  ul.category-list__ul(:class="listClasses")
     li.category-list__item(v-for="category in categories" :key="category.fields.slug")
       nuxt-link(:to="{ path: `/c/${category.fields.slug}/`}") {{ category.fields.title }}
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      categories: this.$store.state.categories,
+      hidesList: true
+    }
+  },
+  methods: {
+    toggleCategoryList () {
+      this.hidesList = !this.hidesList
+    }
+  },
   computed: {
-    categories () {
-      return this.$store.state.categories
+    listClasses () {
+      return {
+        'category-list__ul--hidden': this.hidesList
+      }
+    },
+    toggleCategoryListButtonText () {
+      return (this.hidesList) ? 'anzeigen' : 'ausblenden'
+    },
+    toggleCategoryListButtonLabel () {
+      return `Liste der Kategorrien ${this.toggleCategoryListButtonText}`
     }
   }
 }
@@ -48,6 +68,20 @@ export default {
     margin-bottom: -.25em;
     width: 1.25em;
   }
+
+  @media(max-width: breakpoint(large)) {
+    cursor: pointer;
+  }
+}
+
+.category-list__toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @media(min-width: breakpoint(large)) {
+    display: none;
+  }
 }
 
 .category-list__ul {
@@ -55,6 +89,14 @@ export default {
   flex-flow: row wrap;
   list-style: none;
   padding: 0;
+
+  &--hidden {
+    display: none;
+
+    @media(min-width: breakpoint(large)) {
+      display: flex;
+    }
+  }
 
   @media(min-width: breakpoint(large)) {
     flex-flow: column nowrap;
