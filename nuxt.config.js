@@ -22,6 +22,10 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  env: {
+    cfSpace: process.env.CF_SPACE,
+    cfToken: process.env.CF_TOKEN
+  },
   /*
   ** Customize the progress bar color
   */
