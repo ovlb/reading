@@ -52,18 +52,6 @@ const createStore = () => {
         return Promise.all(contentTypes.map((type) => {
           return getEntriesOfContentType(type.name, type.order, commit, type.commit)
         }))
-        /* return getEntriesOfContentType('article', '-sys.createdAt')
-          .then(posts => {
-            commit('addPosts', posts)
-          }) */
-
-        /* return client.getEntries({
-          content_type: 'article',
-          order: '-sys.createdAt'
-        })
-          .then((response) => {
-            commit('addPosts', response.items)
-          }) */
       }
     }
   })
