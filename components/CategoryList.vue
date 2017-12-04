@@ -91,10 +91,8 @@ export default {
   padding: 0;
 
   &--hidden {
-    display: none;
-
-    @media(min-width: breakpoint(large)) {
-      display: flex;
+    @media(max-width: breakpoint(large)) {
+      display: none;
     }
   }
 
