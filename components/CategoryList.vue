@@ -78,6 +78,7 @@ export default {
   background: none;
   border: none;
   cursor: pointer;
+  text-transform: uppercase;
 
   @media(min-width: breakpoint(large)) {
     display: none;
