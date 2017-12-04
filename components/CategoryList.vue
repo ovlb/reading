@@ -30,7 +30,7 @@ export default {
       return (this.hidesList) ? 'anzeigen' : 'ausblenden'
     },
     toggleCategoryListButtonLabel () {
-      return `Liste der Kategorrien ${this.toggleCategoryListButtonText}`
+      return `Liste der Kategorien ${this.toggleCategoryListButtonText}`
     }
   }
 }
@@ -111,10 +111,10 @@ export default {
   }
 
 a {
-  &.nuxt-link-active {
-    font-weight: bold;
-    text-decoration: underline;
-  }
+    &.nuxt-link-active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
   }
 }
 </style>
