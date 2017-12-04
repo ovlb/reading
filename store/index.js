@@ -1,10 +1,9 @@
 import Vuex from 'vuex'
-import { SPACE_ID, ACCESS_TOKEN } from '../contentful_tokens'
 const contentful = require('contentful')
 
 const client = contentful.createClient({
-  space: SPACE_ID,
-  accessToken: ACCESS_TOKEN
+  space: process.env.cfSpace,
+  accessToken: process.env.cfToken
 })
 
 /**
