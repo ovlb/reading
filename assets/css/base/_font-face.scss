@@ -1,0 +1,51 @@
+$static-base: 'https://static.ovlb.net/fonts';
+$sans-regular-name: 'adagio_sans-regular-webfont';
+$sans-bold-name: 'adagio_sans-bold-webfont';
+
+$serif-regular-name: 'adagio_serif-regular-webfont';
+$serif-bold-name: 'adagio_serif-bold-webfont';
+
+@font-face {
+  font-family: 'Adagio_Sans';
+  font-weight: normal;
+  font-style: normal;
+  src:
+    local('Adagio_Sans'),
+    url('#{$static-base}/#{$sans-regular-name}.woff2') format('woff2'),
+    url('#{$static-base}/#{$sans-regular-name}.woff') format('woff'),
+    url('#{$static-base}/#{$sans-regular-name}.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Adagio_Sans';
+  font-weight: bold;
+  font-style: normal;
+  src:
+    local('Adagio_Sans Semibold'),
+    url('#{$static-base}/#{$sans-bold-name}.woff2') format('woff2'),
+    url('#{$static-base}/#{$sans-bold-name}.woff') format('woff'),
+    url('#{$static-base}/#{$sans-bold-name}.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Adagio_Serif';
+  font-weight: normal;
+  font-style: normal;
+  src:
+    local('Adagio_Serif'),
+    url('#{$static-base}/#{$serif-regular-name}.woff2') format('woff2'),
+    url('#{$static-base}/#{$serif-regular-name}.woff') format('woff'),
+    url('#{$static-base}/#{$serif-regular-name}.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Adagio_Serif';
+  font-weight: bold;
+  font-style: normal;
+  src:
+    local('Adagio_Serif Semibold'),
+    url('#{$static-base}/#{$serif-bold-name}.woff2') format('woff2'),
+    url('#{$static-base}/#{$serif-bold-name}.woff') format('woff'),
+    url('#{$static-base}/#{$serif-bold-name}.ttf') format('truetype');
+}
+

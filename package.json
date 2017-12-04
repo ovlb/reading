@@ -4,6 +4,10 @@
   "description": "A list",
   "author": "Oscar <o@ovlb.net>",
   "private": true,
+  "engines": {
+    "node": "9.2.0",
+    "npm": "5.5.1"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

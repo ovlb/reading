@@ -29,6 +29,7 @@ export default {
 <style lang="scss">
 @import "~assets/css/sass/import";
 
+@import "~assets/css/base/font-face";
 @import "~assets/css/base/custom-properties";
 @import "~assets/css/base/universal-selector";
 @import "~assets/css/base/html";
