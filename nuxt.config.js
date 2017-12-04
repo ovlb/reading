@@ -7,7 +7,13 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'A list' }
+      { hid: 'description', name: 'description', content: 'A list of articles' },
+      // Open Graph
+      { property: 'og:image', content: 'https://reading.ovlb.net/og/image.png' },
+      { property: 'og:image:width', content: '2400px' },
+      { property: 'og:image:height', content: '1260px' },
+      { property: 'og:title', content: 'reading.ovlb' },
+      { property: 'og:description', content: 'A list of articles' }
     ],
     htmlAttrs: {
       lang: 'de'
