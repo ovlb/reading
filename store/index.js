@@ -7,6 +7,15 @@ const client = contentful.createClient({
   accessToken: ACCESS_TOKEN
 })
 
+/**
+ * Get entries from Contentful and commit them to the store
+ *
+ * @param {String} contentType
+ * @param {String} sortOrder
+ * @param {Vuex Commmit} commit Vuex Commit
+ * @param {String} action Commit action
+ * @returns
+ */
 const getEntriesOfContentType = (contentType, sortOrder, commit, action) => {
   return client.getEntries({
     content_type: contentType,
