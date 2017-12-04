@@ -30,7 +30,7 @@ export default {
       return (this.hidesList) ? 'anzeigen' : 'ausblenden'
     },
     toggleCategoryListButtonLabel () {
-      return `Liste der Kategorrien ${this.toggleCategoryListButtonText}`
+      return `Liste der Kategorien ${this.toggleCategoryListButtonText}`
     }
   }
 }
@@ -78,6 +78,7 @@ export default {
   background: none;
   border: none;
   cursor: pointer;
+  text-transform: uppercase;
 
   @media(min-width: breakpoint(large)) {
     display: none;
@@ -91,10 +92,8 @@ export default {
   padding: 0;
 
   &--hidden {
-    display: none;
-
-    @media(min-width: breakpoint(large)) {
-      display: flex;
+    @media(max-width: breakpoint(large)) {
+      display: none;
     }
   }
 
@@ -113,10 +112,10 @@ export default {
   }
 
 a {
-  &.nuxt-link-active {
-    font-weight: bold;
-    text-decoration: underline;
-  }
+    &.nuxt-link-active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
   }
 }
 </style>

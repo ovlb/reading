@@ -3,8 +3,7 @@
     header.main-header
       <logo/>
     section.container
-      keep-alive
-        category-list
+      category-list
       <nuxt/>
   </div>
 </template>

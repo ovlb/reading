@@ -1,5 +1,5 @@
 <template lang="pug">
-  article.post
+  article.post(v-once)
     .post__meta.post__meta--author {{ post.fields.author }}&ensp;—&ensp;{{ post.fields.medium }}
     h2.post__headline {{ post.fields.title }}
     p.post__content {{ post.fields.description }}
@@ -74,9 +74,10 @@ export default {
   }
 }
 
-.post__category {&:not(:last-child) {
-    margin-right: space(full, relative);
-  }
+.post__category {
+    &:not(:first-child) {
+      margin-left: space(full, relative);
+    }
 }
 </style>
 
