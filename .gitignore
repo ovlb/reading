@@ -11,8 +11,6 @@ npm-debug.log
 dist
 
 # Config
-contentful_tokens.js
-
 
 ### OSX specific files ###
 .DS_Store
