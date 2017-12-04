@@ -74,9 +74,10 @@ export default {
   }
 }
 
-.post__category {&:not(:last-child) {
-    margin-right: space(full, relative);
-  }
+.post__category {
+    &:not(:first-child) {
+      margin-left: space(full, relative);
+    }
 }
 </style>
 
