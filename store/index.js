@@ -1,6 +1,17 @@
 import Vuex from 'vuex'
 const contentful = require('contentful')
 
+const space = process.env.cfSpace || process.env.CF_SPACE
+const token = process.env.cfToken || process.env.CF_TOKEN
+
+let client
+if (space && token) {
+  client = contentful.createClient({
+    space: space,
+    accessToken: token
+  })
+}
+
 /**
  * Get entries from Contentful and commit them to the store
  *
@@ -11,17 +22,6 @@ const contentful = require('contentful')
  * @returns
  */
 const getEntriesOfContentType = (contentType, sortOrder, commit, action) => {
-  const space = process.env.cfSpace || process.env.CF_SPACE
-  const token = process.env.cfToken || process.env.CF_TOKEN
-  let client
-  console.log(space, token)
-  if (space && token) {
-    client = contentful.createClient({
-      space: space,
-      accessToken: token
-    })
-  }
-
   return client.getEntries({
     content_type: contentType,
     order: sortOrder
