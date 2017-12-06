@@ -47,6 +47,8 @@ export default {
 @import "~assets/css/type/a";
 
 @import "~assets/css/structures/main-header";
+@import "~assets/css/structures/nav";
+@import "~assets/css/structures/main-nav";
 
 .container {
   display: flex;
