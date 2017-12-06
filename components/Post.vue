@@ -4,8 +4,8 @@
     h2.post__headline {{ post.fields.title }}
     p.post__content {{ post.fields.description }}
     a.button.post__button(:href="post.fields.link") Artikel lesen »
-    .post__meta.post__meta--categories
-      nuxt-link.post__category(:to="{ path: `/c/${category.fields.slug}/`}" v-for="category in post.fields.categories" :key="category.fields.slug") {{ category.fields.title }}
+    nav.post__meta.post__meta--categories(aria-label="Kategorien des Posts")
+      nuxt-link.post__category(:to="{ path: `/c/${category.fields.slug}/`}" v-for="category in post.fields.categories" :key="category.fields.slug" :title="`Archiv der Kategorie ${category.fields.title}`") {{ category.fields.title }}
 </template>
 
 <script>
