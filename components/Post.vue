@@ -31,6 +31,7 @@ export default {
   color: lighten(color(dark), 25);
   display: flex;
   flex-wrap: wrap;
+  font-size: .833em;
   font-size: var(--type-small);
 
 
@@ -51,6 +52,7 @@ export default {
   }
 
   &--author {
+    font-size: .694em;
     font-size: var(--type-very-small);
     letter-spacing: .05em;
     margin-bottom: .25em;
@@ -59,6 +61,7 @@ export default {
 }
 
 .post__headline {
+  font-size: 1.2em;
   font-size: var(--type-medium);
   margin-bottom: space(half, relative);
 }
