@@ -38,15 +38,18 @@ export default {
 
 <style lang="scss" scoped>
 @import "~assets/css/sass/import";
+@import "~assets/css/base/custom-properties";
 
 .category-list {
   font-family: $fonts-secondary;
-  font-size: .84rem;
-  margin-bottom: space(full, viewport);
+  font-size: .833em;
+  font-size: var(--type-small);
+  margin: space(full, viewport) 0 space(double, viewport);
 
   @media (min-width: breakpoint(large)) {
     align-self: flex-start;
-    max-width: 15rem;
+    margin-top: 0;
+    width: 12rem;
     position: sticky;
     top: calc(2rem + 8vmin)
   }
@@ -108,13 +111,6 @@ export default {
   @media(max-width: breakpoint(large)) {
     &:not(:last-child) {
       margin-right: space(full, relative);
-    }
-  }
-
-a {
-    &.nuxt-link-active {
-      font-weight: bold;
-      text-decoration: underline;
     }
   }
 }

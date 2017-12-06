@@ -1,7 +1,7 @@
 .main-headline {
-  font-size: 2.441em;
-  font-style: italic;
-  margin: space(double) 0 space(half);
+  font-size: 1.728em;
+  font-size: var(--type-large);
+  margin: space(double, relative) 0 space(half, relative);
 
   &:first-child {
     margin-top: 0;
@@ -9,13 +9,14 @@
 }
 
 .sub-headline {
-  font-size: 1.563em;
-  font-style: italic;
-  margin: space(double) 0 space(half);
+  font-size: 1.2em;
+  font-size: var(--type-medium);
+  margin: space(full, relative) 0 space(half, relative);
 }
 
 .small-headline {
   font-size: 1em;
+  font-size: var(--type-base);
   font-weight: bold;
   letter-spacing: .1em;
   line-height: 1.1;
@@ -30,10 +31,17 @@
 
 p {
   font-size: 1em;
+  font-size: var(--type-base);
   line-height: 1.425;
-  margin: .25em 0 .125em 0;
+  margin-bottom: space(half, relative);
+  text-indent: 1em;
+
+  .main-headline + &, .sub-headline + &, .small-headline + & {
+    text-indent: 0;
+  }
 }
 
 .p-small {
-  font-size: 80%;
+  font-size: .833em;
+  font-size: var(--type-small);
 }

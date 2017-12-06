@@ -9,4 +9,9 @@ a {
   &:visited {
     color: color(main-dark);
   }
+
+  &.nuxt-link-active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
 }

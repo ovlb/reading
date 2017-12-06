@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.articles
+  main.articles
     post(v-for="post in posts" :post="post" :key="post.sys.id")
 </template>
 

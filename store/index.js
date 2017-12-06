@@ -1,33 +1,34 @@
 import Vuex from 'vuex'
 const contentful = require('contentful')
 
+const space = process.env.cfSpace || process.env.CF_SPACE
+const token = process.env.cfToken || process.env.CF_TOKEN
+
+let client
+if (space && token) {
+  client = contentful.createClient({
+    space: space,
+    accessToken: token
+  })
+}
+
 /**
  * Get entries from Contentful and commit them to the store
  *
- * @param {String} contentType
- * @param {String} sortOrder
+ * @param {Object} contentType Contentful content type
+ * @param {String} contentType.name The name of the content type
+ * @param {String} contentType.order Parameter to order the type by
+ * @param {String} contentType.commit A vuex commit action
  * @param {Vuex Commmit} commit Vuex Commit
- * @param {String} action Commit action
  * @returns
  */
-const getEntriesOfContentType = (contentType, sortOrder, commit, action) => {
-  const space = process.env.cfSpace || process.env.CF_SPACE
-  const token = process.env.cfToken || process.env.CF_TOKEN
-  let client
-  console.log(space, token)
-  if (space && token) {
-    client = contentful.createClient({
-      space: space,
-      accessToken: token
-    })
-  }
-
+const getEntriesOfContentType = (contentType, commit) => {
   return client.getEntries({
-    content_type: contentType,
-    order: sortOrder
+    content_type: contentType.name,
+    order: contentType.order
   })
     .then((response) => {
-      commit(action, response.items)
+      commit(contentType.commit, response.items)
     })
     .catch((error) => {
       console.error(error)
@@ -64,7 +65,7 @@ const createStore = () => {
         ]
 
         return Promise.all(contentTypes.map((type) => {
-          return getEntriesOfContentType(type.name, type.order, commit, type.commit)
+          return getEntriesOfContentType(type, commit)
         }))
       }
     }

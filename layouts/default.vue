@@ -1,9 +1,14 @@
 <template lang="pug">
   .content
     header.main-header
-      <logo/>
+      nav.main-nav(aria-label="Seiten-Navigation")
+        ul.nav__list.main-nav__list
+          li.main-nav__item
+            <logo/>
+          li.main-nav__item
+            nuxt-link(to="/meta/") Meta
     section.container
-      category-list
+      category-list(v-if="this.$route.name !== 'meta'")
       <nuxt/>
   </div>
 </template>
@@ -42,6 +47,8 @@ export default {
 @import "~assets/css/type/a";
 
 @import "~assets/css/structures/main-header";
+@import "~assets/css/structures/nav";
+@import "~assets/css/structures/main-nav";
 
 .container {
   display: flex;
@@ -62,6 +69,10 @@ export default {
 
   @media(min-width: breakpoint(large)) {
     margin-left: 5vw;
+
+    &:first-child {
+      margin-left: 16rem;
+    }
   }
 }
 </style>
