@@ -1,5 +1,5 @@
 <template lang="pug">
-section.articles
+main.articles
   h1.main-headline Überschrift
   p reading.ovlb ist ein Experiment, eine Spielwiese, mit dem zusätzlichen Nutzen, dass ich ein paar der Artikel, die ich gerne gelesen habe, vielleicht nicht direkt wieder vergesse.
   p Diese Seite nutzt <a href="https://vuejs.org/" title="Vue – The Progressive JavaScript Framework">Vue</a> und <a href="https://nuxtjs.org/" title="Nuxt – Universal Vue Applications">Nuxt</a>. Inhalte stelle ich bei <a href="https://www.contentful.com/" title="Contentful – Content Infrastructure for Digital Teams">Contentful</a> ein.
