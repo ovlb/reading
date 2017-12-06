@@ -4,8 +4,10 @@
     h2.post__headline {{ post.fields.title }}
     p.post__content {{ post.fields.description }}
     a.button.post__button(:href="post.fields.link") Artikel lesen »
-    nav.post__meta.post__meta--categories(aria-label="Kategorien des Posts")
-      nuxt-link.post__category(:to="{ path: `/c/${category.fields.slug}/`}" v-for="category in post.fields.categories" :key="category.fields.slug" :title="`Archiv der Kategorie ${category.fields.title}`") {{ category.fields.title }}
+    nav(aria-label="Kategorien des Posts")
+      ul.nav__list.post__meta.post__meta--categories
+        li.post__category(v-for="category in post.fields.categories")
+          nuxt-link(:to="{ path: `/c/${category.fields.slug}/`}" :key="category.fields.slug" :title="`Archiv der Kategorie ${category.fields.title}`") {{ category.fields.title }}
 </template>
 
 <script>
@@ -16,6 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "~assets/css/sass/import";
+@import "~assets/css/base/custom-properties";
 
 
 .post {
@@ -28,9 +31,8 @@ export default {
   color: lighten(color(dark), 25);
   display: flex;
   flex-wrap: wrap;
-  font-size: .694em;
-  letter-spacing: .05em;
-  text-transform: uppercase;
+  font-size: var(--type-small);
+
 
   &--categories {
     font-family: $fonts-secondary;
@@ -49,19 +51,26 @@ export default {
   }
 
   &--author {
+    font-size: var(--type-very-small);
+    letter-spacing: .05em;
     margin-bottom: .25em;
+    text-transform: uppercase;
   }
 }
 
 .post__headline {
-  font-size: 1.2em;
+  font-size: var(--type-medium);
   margin-bottom: space(half, relative);
+}
+
+.post__content {
+  text-indent: 0;
 }
 
 .post__button {
   display: block;
   font-weight: bold;
-  font-size: 85%;
+  font-size: 90%;
   letter-spacing: .1em;
   margin: space(full, relative) 0;
   padding-left: 0;
