@@ -8,7 +8,7 @@
           li.main-nav__item
             nuxt-link(to="/meta/") Meta
     section.container
-      category-list
+      category-list(v-if="this.$route.name !== 'meta'")
       <nuxt/>
   </div>
 </template>
