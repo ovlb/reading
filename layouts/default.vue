@@ -69,6 +69,10 @@ export default {
 
   @media(min-width: breakpoint(large)) {
     margin-left: 5vw;
+
+    &:first-child {
+      margin-left: 14rem;
+    }
   }
 }
 </style>
