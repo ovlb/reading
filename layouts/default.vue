@@ -1,7 +1,12 @@
 <template lang="pug">
   .content
     header.main-header
-      <logo/>
+      nav.main-nav(aria-label="Seiten-Navigation")
+        ul.nav__list.main-nav__list
+          li.main-nav__item
+            <logo/>
+          li.main-nav__item
+            nuxt-link(to="/meta/") Meta
     section.container
       category-list
       <nuxt/>
