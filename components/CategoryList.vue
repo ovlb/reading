@@ -110,12 +110,5 @@ export default {
       margin-right: space(full, relative);
     }
   }
-
-a {
-    &.nuxt-link-active {
-      font-weight: bold;
-      text-decoration: underline;
-    }
-  }
 }
 </style>
