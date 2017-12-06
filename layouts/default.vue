@@ -71,7 +71,7 @@ export default {
     margin-left: 5vw;
 
     &:first-child {
-      margin-left: 14rem;
+      margin-left: 16rem;
     }
   }
 }
