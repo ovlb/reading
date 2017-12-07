@@ -23,7 +23,7 @@ export default {
 
 .post {
   &:not(:last-child) {
-    margin-bottom: space(triple, viewport);
+    margin-bottom: space(triple, relative);
   }
 }
 
