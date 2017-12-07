@@ -1,6 +1,6 @@
 <template lang="pug">
   article.post(v-once)
-    .post__meta.post__meta--author {{ post.fields.author }}&ensp;—&ensp;{{ post.fields.medium }}
+    header.post__meta.post__meta--author(v-html="authorMeta")
     h2.post__headline {{ post.fields.title }}
     p.post__content {{ post.fields.description }}
     a.button.post__button(:href="post.fields.link") Artikel lesen »
@@ -12,7 +12,19 @@
 
 <script>
 export default {
-  props: ['post']
+  props: ['post'],
+  computed: {
+    authorMeta () {
+      const author = this.post.fields.author.trim()
+      const medium = this.post.fields.medium
+
+      if (author && medium) {
+        return `${author}&ensp;—&ensp;${medium.trim()}`
+      } else if (!medium) {
+        return author
+      }
+    }
+  }
 }
 </script>
 
