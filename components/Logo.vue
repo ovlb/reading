@@ -1,5 +1,5 @@
 <template lang="pug">
-  nuxt-link.logo(to="/" exact)
+  nuxt-link.logo(to="/" title="Zur Startseite" exact)
     img(src="~assets/images/site/reading-logo.svg" alt="reading.ovl")
 </template>
 
