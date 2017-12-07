@@ -2,7 +2,7 @@
   article.post(v-once)
     .post__meta.post__meta--author {{ post.fields.author }}&ensp;—&ensp;{{ post.fields.medium }}
     h2.post__headline {{ post.fields.title }}
-    p.post__content(v-html="post.fields.description")
+    p.post__content(v-html="post.fields.compiledDescription")
     a.button.post__button(:href="post.fields.link") Artikel lesen »
     nav(aria-label="Kategorien des Posts")
       ul.nav__list.post__meta.post__meta--categories
