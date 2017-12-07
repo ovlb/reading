@@ -7,6 +7,7 @@
 
 }
 
-main *:first-child {
-  margin-top: 0;
+::selection {
+  background-color: color(main);
+  color: color(light);
 }

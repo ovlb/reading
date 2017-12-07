@@ -10,6 +10,11 @@ a {
     color: color(main-dark);
   }
 
+  &:focus {
+    outline: 2px dotted color(main);
+    padding: .25em;;
+  }
+
   &.nuxt-link-active {
     font-weight: bold;
     text-decoration: underline;

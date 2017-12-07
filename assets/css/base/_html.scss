@@ -1,6 +1,6 @@
 html {
   font-family: $fonts-main;
-  font-size: 90%;
+  font-size: 92%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -8,7 +8,7 @@ html {
   box-sizing: border-box;
 
   @media(min-width: breakpoint(small)) {
-    font-size: 95%;
+    font-size: 96%;
   }
 
   @media(min-width: breakpoint(medium)) {
@@ -16,14 +16,14 @@ html {
   }
 
   @media(min-width: breakpoint(large)) {
-    font-size: 105%;
+    font-size: 104%;
   }
 
   @media(min-width: breakpoint(xlarge)) {
-    font-size: 110%;
+    font-size: 108%;
   }
 
   @media(min-width: breakpoint(xxlarge)) {
-    font-size: 113%;
+    font-size: 112%;
   }
 }
