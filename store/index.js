@@ -1,4 +1,5 @@
 import Vuex from 'vuex'
+import marked from 'marked'
 const contentful = require('contentful')
 
 const space = process.env.cfSpace || process.env.CF_SPACE
@@ -45,6 +46,10 @@ const createStore = () => {
       addPosts (state, posts) {
         if (posts) {
           posts.forEach((post) => {
+            const description = post.fields.description
+            // Trim whitespace to be sure that splice() only cuts of the opening
+            // and closing <p> tags
+            post.fields.compiledDescription = marked(description).trim().slice(3, -4)
             state.posts.push(post)
           })
         }
