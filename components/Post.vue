@@ -2,7 +2,7 @@
   article.post(v-once)
     header.post__meta.post__meta--author(v-html="authorMeta")
     h2.post__headline {{ post.fields.title }}
-    p.post__content(v-html="post.fields.compiledDescription")
+    section.post__content(v-html="post.fields.compiledDescription")
     a.button.post__button(:href="post.fields.link") Artikel lesen »
     nav(aria-label="Kategorien des Posts")
       ul.nav__list.post__meta.post__meta--categories
@@ -28,7 +28,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "~assets/css/sass/import";
 @import "~assets/css/base/custom-properties";
 

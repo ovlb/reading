@@ -15,8 +15,7 @@ const createStore = () => {
             const description = post.fields.description
             // Trim whitespace to be sure that slice() cuts of the opening
             // and closing <p> tags
-            post.fields.compiledDescription =
-                marked(description).trim().slice(3, -4)
+            post.fields.compiledDescription = marked(description)
             state.posts.push(post)
           })
         }
