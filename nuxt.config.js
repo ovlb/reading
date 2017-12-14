@@ -1,3 +1,5 @@
+const contentful = require('contentful')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -30,6 +32,31 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#000' },
+  /*
+  ** Load categories to build routes
+  */
+  generate: {
+    routes () {
+      const space = process.env.cfSpace || process.env.CF_SPACE
+      const token = process.env.cfToken || process.env.CF_TOKEN
+
+      let client
+      if (space && token) {
+        client = contentful.createClient({
+          space: space,
+          accessToken: token
+        })
+      }
+      return client.getEntries({
+        content_type: 'category',
+        order: 'fields.title'
+      }).then((response) => {
+        return response.items.map((entry) => {
+          return `/c/${entry.fields.slug}`
+        })
+      })
+    }
+  },
   /*
   ** Build configuration
   */
