@@ -1,8 +1,6 @@
 import Vuex from 'vuex'
-
+import marked from 'marked'
 import getEntriesOfContentType from '../lib/getEntriesOfContentType'
-// import { resolve } from 'dns';
-// import { resolve } from 'url'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -14,6 +12,10 @@ const createStore = () => {
       addPosts (state, posts) {
         if (posts) {
           posts.forEach((post) => {
+            const description = post.fields.description
+            // Trim whitespace to be sure that slice() cuts of the opening
+            // and closing <p> tags
+            post.fields.compiledDescription = marked(description)
             state.posts.push(post)
           })
         }

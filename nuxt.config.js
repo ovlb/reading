@@ -46,15 +46,14 @@ module.exports = {
           space: space,
           accessToken: token
         })
-      }
-      return client.getEntries({
-        content_type: 'category',
-        order: 'fields.title'
-      }).then((response) => {
-        return response.items.map((entry) => {
-          return `/c/${entry.fields.slug}`
+
+        return client.getEntries({
+          content_type: 'category',
+          order: 'fields.title'
+        }).then((response) => {
+          return response.items.map((entry) => `/c/${entry.fields.slug}`)
         })
-      })
+      }
     }
   },
   /*

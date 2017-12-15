@@ -7,10 +7,9 @@
 @import "~assets/css/sass/import";
 
 .logo {
-  max-width: 20rem;
+  display: flex;
 
   img {
-    display: block;
     max-width: 9rem;
     width: 50vw;
   }

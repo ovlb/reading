@@ -1,6 +1,6 @@
 {
   "name": "reading.ovlb",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A list",
   "author": "Oscar <o@ovlb.net>",
   "private": true,
@@ -19,6 +19,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "contentful": "^5.0.5",
+    "marked": "^0.3.7",
     "node-sass": "^4.7.2",
     "nuxt": "^1.0.0-rc11",
     "pug": "^2.0.0-rc.4",
