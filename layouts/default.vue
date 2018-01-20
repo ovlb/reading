@@ -10,17 +10,20 @@
     section.container
       category-list(v-if="this.$route.name !== 'meta'")
       <nuxt/>
+    the-footer
   </div>
 </template>
 
 <script>
+import TheFooter from '~/components/TheFooter'
 import Logo from '~/components/Logo'
 import CategoryList from '~/components/CategoryList'
 
 export default {
   components: {
     Logo,
-    CategoryList
+    CategoryList,
+    TheFooter
   },
   data () {
     return {
