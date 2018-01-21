@@ -5,11 +5,13 @@ import getEntriesOfContentType from '../lib/getEntriesOfContentType'
 const createStore = () => {
   return new Vuex.Store({
     state: {
+      postTotal: 0,
       posts: [],
       categories: []
     },
     mutations: {
-      addPosts (state, posts) {
+      addPosts (state, data) {
+        const posts = data.items
         if (posts) {
           posts.forEach((post) => {
             const description = post.fields.description
@@ -19,8 +21,11 @@ const createStore = () => {
             state.posts.push(post)
           })
         }
+
+        state.postTotal = data.total
       },
-      addCategories (state, items) {
+      addCategories (state, data) {
+        const items = data.items
         if (items) {
           items.forEach((item) => {
             state.categories.push(item)
@@ -31,7 +36,7 @@ const createStore = () => {
     actions: {
       nuxtServerInit ({ commit }) {
         const contentTypes = [
-          {name: 'article', order: '-sys.createdAt', commit: 'addPosts'},
+          {name: 'article', order: '-sys.createdAt', limit: 25, commit: 'addPosts'},
           {name: 'category', order: 'fields.title', commit: 'addCategories'}
         ]
 
