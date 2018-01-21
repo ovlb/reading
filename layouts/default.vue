@@ -48,6 +48,7 @@ export default {
 @import "~assets/css/media/img";
 @import "~assets/css/type/typography";
 @import "~assets/css/type/a";
+@import "~assets/css/elements/button";
 
 @import "~assets/css/structures/main-header";
 @import "~assets/css/structures/nav";
