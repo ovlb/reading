@@ -80,7 +80,7 @@ export default {
 .category-list__toggle {
   background: none;
   border: none;
-  cursor: pointer;
+  color: color(dark);
   text-transform: uppercase;
 
   @media(min-width: breakpoint(large)) {
