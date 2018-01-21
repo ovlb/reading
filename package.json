@@ -21,7 +21,7 @@
     "contentful": "^5.0.5",
     "marked": "^0.3.12",
     "node-sass": "^4.7.2",
-    "nuxt": "^1.0.0-rc11",
+    "nuxt": "^1.1.1",
     "pug": "^2.0.0-rc.4",
     "sass-loader": "^6.0.6"
   },
