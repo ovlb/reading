@@ -21,12 +21,12 @@
   "dependencies": {
     "axios": "^0.17.1",
     "contentful": "^5.0.5",
-    "marked": "^0.3.17",
+    "marked": "^0.6.2",
     "node-sass": "^4.9.1",
-    "nuxt": "^1.1.1",
+    "nuxt": "^2.3.0",
     "pug": "^2.0.0",
     "sass-loader": "^6.0.6",
-    "snyk": "^1.103.4"
+    "snyk": "^1.169.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
