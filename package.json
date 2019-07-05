@@ -21,7 +21,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "contentful": "^5.0.5",
-    "marked": "^0.3.17",
+    "marked": "^0.4.0",
     "node-sass": "^4.9.1",
     "nuxt": "^1.1.1",
     "pug": "^2.0.0",
