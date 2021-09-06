@@ -19,7 +19,7 @@
     "prepare": "npm run snyk-protect"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.21.3",
     "contentful": "^5.0.5",
     "marked": "^0.3.17",
     "node-sass": "^4.11.0",
